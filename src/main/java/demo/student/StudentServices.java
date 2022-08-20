@@ -1,14 +1,17 @@
-package demo.student.services;
+package demo.student;
 
-import demo.student.models.Student;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
 
-public class StudentService {
-    @GetMapping
+
+//@Service and @Component are the exact same thing but service is more systematic
+@Service
+public class StudentServices {
     public List<Student> getStudents (){
         return List.of(
                 new Student(
@@ -16,7 +19,7 @@ public class StudentService {
                         "Areeba Rauf",
                         "areebarauf96@outlook.com",
                         LocalDate.of(1996, Month.NOVEMBER, 5),
-                        25
+                        27
                 )
         );
     }
